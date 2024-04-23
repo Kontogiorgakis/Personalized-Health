@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--Page Tilte-->
+    <title>Administrator page</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!--Javascript-->
+    <script src="js/administrator.js" defer></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="administrator.css">
+
+</head>
+
+
+<body onload="init();return false;"> 
+    <div id="admin">    
+    <div class="title">
+        <header>
+            <h1 style="font-family:Arial, Helvetica, sans-serif; text-align: center;"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 9">
+             <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+            </svg>Administrator page</h1>
+        </header>
+    </div>
+        
+            <!--Status-->
+    <div id="profile_status">
+        <div id="logo_prof"></div>
+        <div id="name_prof">(ADMINISTRATOR)</div>
+   
+    </div>
+        
+        
+    <div id="welcome">
+        <h2>Welcome to administrator page</h2>
+    </div>
+            
+    <div id="options">
+        <button class="msgBtnBack" onclick="userAccess(); return false;">GET ALL</button>
+        <div id="allDocs">
+        </div>
+        <div id="allUsers">
+        </div>
+        
+    </div>
+    </div>
+</body>
+</html>

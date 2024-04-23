@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--Page Tilte-->
+    <title>Login form</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!--Javascript-->
+    <script src="js/restme.js" defer></script>
+
+    <!--<link rel="stylesheet" href="css/stylee.css">-->
+    <link rel="stylesheet" href="ass3.css">
+
+</head>
+
+
+<body>
+    <div id="rester">
+        <form id="myForm">
+        <button onclick="back(); return false;">BACK</button>
+        <!--Title-->
+        <div class="title">
+            <header>
+                <h1 style="font-family:Arial, Helvetica, sans-serif; text-align: center;"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 9">
+                    <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                </svg> Blood Test </h1>
+            </header>
+        </div>
+
+        <div id="ask">
+
+            <br>
+            <!--ASKISI 1-->
+            <h1>New Bloodtest:</h1>
+            <h2><label for="amka">AMKA: </label>
+                <input type="text" placeholder="amka" id="amka" name="amka" minlength="11" maxlength="11" pattern="[0-9]+" >
+            </h2>   
+            <!--birthdate-->
+            <h2><label for="test_date">Test Date: </label>
+                <input type="date" id="test_date" name="test_date"
+                       value="1999-01-01"
+                       min="1999-01-01" max="2022-12-31" >
+            </h2>
+
+            <!--name-->
+            <h2><label for="medical_center">Medical Center: </label>
+                <input type="text" placeholder="medical_center" id="naming" name="medical_center" pattern="^[a-zA-Z1-9]+[^\s]*"  >
+            </h2>
+
+            <!--measures-->
+            <h2><label for="blood_sugar">Blood Sugar: </label>
+                <input type="number" placeholder="blood_sugar" name="blood_sugar" id="cholesterol" step=".01">
+            </h2>
+
+
+
+            <h2><label for="cholesterol">Cholesterol: </label>
+                <input type="number" placeholder="cholesterol" name="cholesterol" id="cholesterol" step=".01">
+            </h2>
+
+            <h2><label for="iron">Iron: </label>
+                <input type="number" placeholder="iron" name="iron" id="iron" step=".01">
+            </h2>
+
+            <h2><label for="vitamin_d3">Vitamin_d3: </label>
+                <input type="number" placeholder="vitamin_d3" name="vitamin_d3" id="vitamin_d3" step=".01">
+            </h2>
+
+
+            <h2><label for="vitamin_b12">Vitamin_b12: </label>
+                <input type="number" placeholder="vitamin_b12" name="vitamin_b12" id="vitamin_b12" step=".01">
+            </h2>
+
+            <button class="msgBtnBack" id="add" onclick="newBloodtest();return false;">ADD TEST</button>
+
+            <br><br>
+            <div class="everout" id="output"></div>
+            <br><br><br>
+        </form>
+
+            <!--Askisi 2-->
+            <h1>Get Bloodtest:</h1>
+            <h2><label for="amka2">AMKA: </label>
+                <input type="text" placeholder="amka" id="amka2" name="amka2" minlength="11" maxlength="11" pattern="[0-9]+" >
+            </h2> 
+
+            <!--fromd ate-->
+            <h2><label for="from_date">From Date: </label>
+                <input type="text" placeholder="yyyy-MM-dd" id="from_date" name="from_date">
+            </h2>
+
+            <!--to date-->
+            <h2><label for="to_date">To Date: </label>
+                <input type="text" placeholder="yyyy-MM-dd" id="to_date" name="to_date">
+            </h2>
+
+
+            <button class="msgBtnBack" id="getAll" onclick="getAmkaResults();return false;">GET TEST</button>
+            <div class="everout" id="output2"></div>
+            <br><br>
+            <br><br>
+            <button class="msgBtnBack" id="getAll" onclick="getTreatment();return false;">GET TREATMENT</button>
+            <div class="everout" id="outputTreatment"></div>
+            <br><br>
+            <br><br>
+
+            <!--Askisi 3-->
+            <h1>Get Measure:</h1>
+            <h2><label for="amka3">AMKA: </label>
+                <input type="text" placeholder="amka" id="amka3" name="amka3" minlength="11" maxlength="11" pattern="[0-9]+" >
+            </h2> 
+
+            <!--measure-->
+            <h2><label for="measure">Measure: </label>
+                <input type="text" placeholder="measure" id="measure" name="measure">
+            </h2>
+
+            <button class="msgBtnBack" id="getAll" onclick="getMeasure();return false;">GET MEASURE</button>
+            <br><br>
+            <div class="everout" id="output3"></div>
+            <br><br><br>
+
+
+            <!--Askisi 4-->
+            <h1>Update Bloodtest:</h1>
+            <h2><label for="bloodtest_id">BloodTestID: </label>
+                <input type="number" placeholder="bloodtest_id" id="bloodtest_id" name="bloodtest_id">
+            </h2> 
+
+            <h2><label for="measure2">Measure: </label>
+                <input type="text" placeholder="measure" id="measure2" name="measure">
+            </h2>
+
+            <h2><label for="value">Value: </label>
+                <input type="number" placeholder="value" id="value" name="value" step=".01">
+            </h2>
+
+            <button class="msgBtnBack" id="getAll" onclick="updateBloodtest();return false;">UPDATE BLOODTEST</button>
+            <br><br>
+            <div class="everout" id="output4"></div>
+            <br><br><br>
+
+            <!--Askisi 5-->
+            <h1>Delete Bloodtest:</h1>
+            <h2><label for="bloodtest_id2">BloodTestID: </label>
+                <input type="number" placeholder="bloodtest_id" id="bloodtest_id2" name="bloodtest_id">
+            </h2> 
+
+            <button class="msgBtnBack" id="getAll" onclick="deleteBloodTest();return false;">DELETE BLOODTEST</button>
+            <br><br>
+            <div class="everout" id="output5"></div>
+            <br><br><br>
+            
+            <!--Askisi 5-->
+            <h1>Get Distances:</h1>
+            <h2><label for="LAT">LAT</label>
+                <input type="text" placeholder="LAT" id="LAT" name="LAT">
+            </h2> 
+            <h2><label for="LON">LON</label>
+                <input type="text" placeholder="LON" id="LON" name="LON">
+            </h2> 
+
+            <button class="msgBtnBack" id="getAll" onclick="getDoctorDistance();return false;">GET DISTANCES</button>
+            <br><br>
+            <div class="everout" id="outputDistance"></div>
+            <br><br><br>
+            
+  
+        </div>
+    </div>
+
+    
+</body>
+</html>
